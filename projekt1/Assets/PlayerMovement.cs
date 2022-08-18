@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f;
     public float jumpForce = 1000f;
     public float maxVelocity;
+    public int jumpcd = 1;
     void Update()
     {
         Movement();
