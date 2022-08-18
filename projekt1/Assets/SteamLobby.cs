@@ -4,7 +4,7 @@ using UnityEngine;
 using Mirror;
 using Steamworks;
 using UnityEngine.UI;
-public class SteamLobby : NetworkBehaviour
+public class SteamLobby : MonoBehaviour
 {
     protected Callback<LobbyCreated_t> LobbyCreated;
     protected Callback<GameLobbyJoinRequested_t> JoinRequest;
