@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2671781830179808364, guid: 368b19668df59eb448a6200b0c493385, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.73
+      value: -1.95
       objectReference: {fileID: 0}
     - target: {fileID: 2671781830179808364, guid: 368b19668df59eb448a6200b0c493385, type: 3}
       propertyPath: m_LocalPosition.z
@@ -288,6 +288,10 @@ PrefabInstance:
     - target: {fileID: 2671781830179808371, guid: 368b19668df59eb448a6200b0c493385, type: 3}
       propertyPath: m_Name
       value: Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857037428664525174, guid: 368b19668df59eb448a6200b0c493385, type: 3}
+      propertyPath: gravity
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 368b19668df59eb448a6200b0c493385, type: 3}
