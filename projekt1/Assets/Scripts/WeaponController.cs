@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class WeaponController : MonoBehaviour
+using Mirror;
+public class WeaponController : NetworkBehaviour
 {
     [Header("Pisstol")]
     public GameObject Pistol;
@@ -20,6 +20,10 @@ public class WeaponController : MonoBehaviour
 
     private void Update()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         PistolRotation();
     }
     void PistolRotation()
