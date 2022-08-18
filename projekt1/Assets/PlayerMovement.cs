@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 input;
     public float speed = 10f;
     public float jumpForce = 1000f;
+    public float maxVelocity;
     void Update()
     {
         Movement();
@@ -19,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     void Movement()
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal") * speed, 0f);
+
+
         if (Input.GetKeyDown("space"))
         {
             Debug.Log("yuh");
