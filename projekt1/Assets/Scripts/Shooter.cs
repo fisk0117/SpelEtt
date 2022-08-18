@@ -28,6 +28,8 @@ public class Shooter : MonoBehaviour
     void Shoot()
     {
         GameObject lazerBullet = Instantiate(bullet, shootPos.position, transform.rotation);
+        Physics2D.IgnoreCollision(lazerBullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
         lazerBullet.GetComponent<Rigidbody2D>().AddForce(shootPos.right * speed);
         gameObject.GetComponent<Rigidbody2D>().AddForce(shootPos.right * -speed * kb);
     }
