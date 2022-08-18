@@ -42,7 +42,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        jumpcd = 0;
+        if (collision.gameObject.tag == "mark")
+        {
+            jumpcd = 0;
+        }
     }
-
 }
