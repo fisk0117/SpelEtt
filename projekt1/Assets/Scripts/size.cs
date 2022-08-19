@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class size : MonoBehaviour
+using Mirror;
+public class size : NetworkBehaviour
 {
     float a;
     // Start is called before the first frame update
@@ -14,6 +14,8 @@ public class size : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isLocalPlayer)
+            return;
 
         a = GameObject.FindWithTag("Player").GetComponent<Shooter>().ammocd;
         Debug.Log(a);

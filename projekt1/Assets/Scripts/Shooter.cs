@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Shooter : MonoBehaviour
+using Mirror;
+public class Shooter : NetworkBehaviour
 {
     public GameObject bullet;
     public Transform shootPos;
@@ -22,6 +22,8 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
+        if (!isLocalPlayer)
+            return;
         tr.startColor = color;
         tr.endColor = color;
         

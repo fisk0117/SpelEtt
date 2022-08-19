@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     public Rigidbody2D rb;
     Vector2 input;
@@ -12,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public int jumpcd = 1;
     void Update()
     {
+        if (!isLocalPlayer)
+            return;
         Movement();
     }
     void FixedUpdate()
