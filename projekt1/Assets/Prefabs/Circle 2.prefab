@@ -186,7 +186,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c9ca8eb000b9ed445944a571b4f15785, type: 3}
+  m_Sprite: {fileID: 1334242764, guid: 53bcbaf457d3bee48a66b0a0134cfafe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: 2dee17f601b8acf4996412ce4f394345
+  m_AssetId: 7e73504740b231e4c98aac0ddc950367
   hasSpawned: 0
 --- !u!114 &-7431139350390438082
 MonoBehaviour:
