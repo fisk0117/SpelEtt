@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
-public class Shooter : NetworkBehaviour
+public class Shooter : MonoBehaviour
 {
     public GameObject bullet;
     public Transform shootPos;
@@ -27,18 +26,6 @@ public class Shooter : NetworkBehaviour
         }
     }
     void Shoot()
-    {
-        SpawnBulletServer();
-    }
-
-    [Command(requiresAuthority = false)]
-    void SpawnBulletServer()
-    {
-        SpawnBulletClient();
-    }
-
-    [ClientRpc]
-    void SpawnBulletClient()
     {
         GameObject lazerBullet = Instantiate(bullet, shootPos.position, transform.rotation);
         Physics2D.IgnoreCollision(lazerBullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
