@@ -12,7 +12,7 @@ public class SteamLobby : NetworkBehaviour
 
     public ulong CurrentLobbyId;
     private const string HostAdressKey = "HostAddress";
-    private CustomNetworkManager manager;
+    private NetworkManager manager;
 
     public GameObject HostButton;
     public Text LobbyNameText;
@@ -23,7 +23,7 @@ public class SteamLobby : NetworkBehaviour
         {
             return;
         }
-        manager = GetComponent<CustomNetworkManager>();
+        manager = GetComponent<NetworkManager>();
 
         LobbyCreated = Callback<LobbyCreated_t>.Create(OnLobbyCreated);
         JoinRequest = Callback<GameLobbyJoinRequested_t>.Create(OnJoinRequest);
@@ -33,7 +33,6 @@ public class SteamLobby : NetworkBehaviour
     public void HostLobby()
     {
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, manager.maxConnections);
-        Debug.Log("yuh");
     }
 
     private void OnLobbyCreated(LobbyCreated_t callback)
