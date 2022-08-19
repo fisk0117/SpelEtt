@@ -40,6 +40,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "mark")
+        {
+            if (jumpcd == 0)
+            {
+                jumpcd = 1;
+            }
+
+        }
+    }
+
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "mark")
