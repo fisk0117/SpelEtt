@@ -58,12 +58,22 @@ public class PlayerMovement : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            Vector2 mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            _lindeRenderer.SetPosition(0, mousePos);
-            _lindeRenderer.SetPosition(1, transform.position);
-            _distancejoint.connectedAnchor = mousePos;
-            _distancejoint.enabled = true;
-            _lindeRenderer.enabled = true;
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject.layer == 6)
+                {
+                    _lindeRenderer.SetPosition(0, mousePos);
+                    _lindeRenderer.SetPosition(1, transform.position);
+                    _distancejoint.connectedAnchor = mousePos;
+                    _distancejoint.enabled = true;
+                    _lindeRenderer.enabled = true;
+                }
+            }
+            
         }
         else if (Input.GetKeyUp(KeyCode.Mouse1))
         {
