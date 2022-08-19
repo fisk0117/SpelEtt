@@ -5,6 +5,8 @@ using Mirror;
 
 public class PlayerMovement : NetworkBehaviour
 {
+    public static PlayerMovement Instance;
+
     public Rigidbody2D rb;
     Vector2 input;
     public float speed = 10f;
@@ -13,8 +15,9 @@ public class PlayerMovement : NetworkBehaviour
     public int jumpcd = 1;
     void Update()
     {
-        if (!isLocalPlayer)
-            return;
+        if (!isLocalPlayer) return;
+
+        Instance = this;
         Movement();
     }
     void FixedUpdate()
@@ -23,6 +26,7 @@ public class PlayerMovement : NetworkBehaviour
     }
     void Movement()
     {
+
         input = new Vector2(Input.GetAxisRaw("Horizontal") * speed, 0f);
 
 

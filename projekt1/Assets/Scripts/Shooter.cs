@@ -44,7 +44,7 @@ public class Shooter : NetworkBehaviour
         if (ammocd >=0)
         {
             ammocd -= Time.deltaTime;
-            Debug.Log(ammocd);
+            //Debug.Log(ammocd);
         }
 
         if ((ammocd <= 0) && (ammocdcd == 1))
