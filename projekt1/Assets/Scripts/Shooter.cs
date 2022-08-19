@@ -18,10 +18,6 @@ public class Shooter : NetworkBehaviour
 
     void Update()
     {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
         tr.startColor = color;
         tr.endColor = color;
 
