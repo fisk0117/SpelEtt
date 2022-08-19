@@ -18,6 +18,20 @@ public class WeaponController : NetworkBehaviour
     Vector3 mousePosition;
     bool on;
 
+    
+
+
+    private void Start()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
+
+    }
+
+
     private void Update()
     {
         if (!isLocalPlayer)
@@ -31,7 +45,7 @@ public class WeaponController : NetworkBehaviour
             return;
         }
         screenPosition = Input.mousePosition;
-        Debug.Log(Camera.main);
+
         mousePosition = Camera.main.ScreenToWorldPoint(screenPosition);
 
         mousePos = mousePosition - transform.position;

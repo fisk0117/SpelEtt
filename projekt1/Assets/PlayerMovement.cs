@@ -13,11 +13,28 @@ public class PlayerMovement : NetworkBehaviour
     public float jumpForce = 1000f;
     public float maxVelocity;
     public int jumpcd = 1;
+
+
+    [Header("Grapple")]
+    public LineRenderer _lindeRenderer;
+    public DistanceJoint2D _distancejoint;
+
+    private void Start()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+        _distancejoint.enabled = false;
+
+    }
     void Update()
     {
         if (!isLocalPlayer) return;
 
+        
         Instance = this;
+        Grapple();
         Movement();
     }
     void FixedUpdate()
@@ -35,6 +52,27 @@ public class PlayerMovement : NetworkBehaviour
             jumpcd = 0;
             Debug.Log("yuh");
             rb.AddForce(gameObject.transform.up * jumpForce);
+        }
+    }
+    void Grapple()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            Vector2 mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _lindeRenderer.SetPosition(0, mousePos);
+            _lindeRenderer.SetPosition(1, transform.position);
+            _distancejoint.connectedAnchor = mousePos;
+            _distancejoint.enabled = true;
+            _lindeRenderer.enabled = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            _distancejoint.enabled = false;
+            _lindeRenderer.enabled = false;
+        }
+        if (_distancejoint.enabled)
+        {
+            _lindeRenderer.SetPosition(1, transform.position);
         }
     }
 
