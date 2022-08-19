@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 111399836}
   - component: {fileID: 111399835}
   - component: {fileID: 111399834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (3)
   m_TagString: mark
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 189631446}
   - component: {fileID: 189631445}
   - component: {fileID: 189631444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: mark
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ MonoBehaviour:
   networkAddress: localhost
   maxConnections: 100
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 6982631489389933761, guid: 2dee17f601b8acf4996412ce4f394345, type: 3}
+  playerPrefab: {fileID: 6982631489389933761, guid: 7e73504740b231e4c98aac0ddc950367, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 805709504}
   - component: {fileID: 805709503}
   - component: {fileID: 805709502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +738,7 @@ GameObject:
   - component: {fileID: 1048272645}
   - component: {fileID: 1048272644}
   - component: {fileID: 1048272643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (5)
   m_TagString: mark
   m_Icon: {fileID: 0}
@@ -946,7 +946,7 @@ GameObject:
   - component: {fileID: 1470121284}
   - component: {fileID: 1470121283}
   - component: {fileID: 1470121282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 2141137313}
   - component: {fileID: 2141137312}
   - component: {fileID: 2141137311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (4)
   m_TagString: mark
   m_Icon: {fileID: 0}
