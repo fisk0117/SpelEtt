@@ -31,6 +31,7 @@ public class WeaponController : NetworkBehaviour
             return;
         }
         screenPosition = Input.mousePosition;
+        Debug.Log(Camera.main);
         mousePosition = Camera.main.ScreenToWorldPoint(screenPosition);
 
         mousePos = mousePosition - transform.position;
