@@ -30,12 +30,12 @@ public class health : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "bullet")
-        {
-            Destroy(other.gameObject);
-            hp--;
-        }
-    }
+    // void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if (other.gameObject.tag == "bullet")
+    //     {
+    //         Destroy(other.gameObject);
+    //         hp--;
+    //     }
+    // }
 }
