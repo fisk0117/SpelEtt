@@ -143,6 +143,7 @@ Library: lib_burst_generated
 --compilation-defines=MIRROR_58_0_OR_NEWER
 --compilation-defines=MIRROR_65_0_OR_NEWER
 --compilation-defines=MIRROR_66_0_OR_NEWER
+--compilation-defines=STEAMWORKS_NET
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
@@ -196,6 +197,8 @@ Library: lib_burst_generated
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Mirror.Authenticators.dll
+--root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\com.rlabrecque.steamworks.net.dll
+--root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\FizzySteamworks.dll
 --assembly-folder=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -346,6 +349,7 @@ Library: lib_burst_generated
 --compilation-defines=MIRROR_58_0_OR_NEWER
 --compilation-defines=MIRROR_65_0_OR_NEWER
 --compilation-defines=MIRROR_66_0_OR_NEWER
+--compilation-defines=STEAMWORKS_NET
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
@@ -399,6 +403,8 @@ Library: lib_burst_generated
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Mirror.Authenticators.dll
+--root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\com.rlabrecque.steamworks.net.dll
+--root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\FizzySteamworks.dll
 --assembly-folder=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10

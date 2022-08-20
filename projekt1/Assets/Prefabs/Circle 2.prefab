@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 963911893217495980}
   - component: {fileID: 873128783992634331}
   - component: {fileID: 8238309413311179482}
+  - component: {fileID: 3461671779323252060}
   m_Layer: 0
   m_Name: Circle 2
   m_TagString: Player
@@ -537,6 +538,21 @@ MonoBehaviour:
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   target: {fileID: 5040470485566712430}
+--- !u!114 &3461671779323252060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982631489389933761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f2df170b55dde46af327d184298dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 3
+  starthp: 3
+  livingplayer: {fileID: 6982631489389933761}
 --- !u!1 &6982631489785626676
 GameObject:
   m_ObjectHideFlags: 0
