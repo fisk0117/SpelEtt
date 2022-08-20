@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
         PlayerMovement pm = PlayerMovement.Instance;
         if (pm)
         {
-            transform.position = pm.transform.position + new Vector3(0, 0, -15f);
+            transform.position = pm.transform.position + new Vector3(0, 0, -30f);
         }
     }
 }
