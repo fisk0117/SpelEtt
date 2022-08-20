@@ -58,6 +58,18 @@ public class Shooter : NetworkBehaviour
     }
     void Shoot()
     {
+        ShootOnServer();
+    }
+
+    [Command(requiresAuthority = false)]
+    void ShootOnServer()
+    {
+        ShootOnClient();
+    }
+
+    [ClientRpc]
+    void ShootOnClient()
+    {
         GameObject lazerBullet = Instantiate(bullet, shootPos.position, transform.rotation);
         Physics2D.IgnoreCollision(lazerBullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
@@ -66,5 +78,4 @@ public class Shooter : NetworkBehaviour
         NetworkServer.Spawn(lazerBullet);
     }
 
-    
 }
