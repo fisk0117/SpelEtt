@@ -1043,6 +1043,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7916775182019608004, guid: c35fd6cadea666f42b6e6a3e9770b55f, type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916775182019608004, guid: c35fd6cadea666f42b6e6a3e9770b55f, type: 3}
+      propertyPath: spawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 2884430472495326428, guid: e57b9501032cd57458e16d7b72faf8c9, type: 3}
     - target: {fileID: 7916775182019608007, guid: c35fd6cadea666f42b6e6a3e9770b55f, type: 3}
       propertyPath: HostButton
       value: 
