@@ -73,6 +73,7 @@ public class Shooter : NetworkBehaviour
         GameObject lazerBullet = Instantiate(bullet, shootPos.position, transform.rotation);
         Physics2D.IgnoreCollision(lazerBullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
+        lazerBullet.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         lazerBullet.GetComponent<Rigidbody2D>().AddForce(shootPos.right * speed);
         gameObject.GetComponent<Rigidbody2D>().AddForce(shootPos.right * -speed * kb);
     }

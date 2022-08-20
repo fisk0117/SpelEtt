@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 2671781830179808361}
   - component: {fileID: 2671781830179808366}
   - component: {fileID: 2671781830179808367}
+  - component: {fileID: 3535246953467872005}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -250,12 +251,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456cd2c27fdeee046b3ccfcafbdb050f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   rb: {fileID: 2671781830179808367}
-  collider: {fileID: 2671781830179808366}
   speed: 1000
   jumpForce: 500
   maxVelocity: 0
   jumpcd: 1
+  _lindeRenderer: {fileID: 0}
+  _distancejoint: {fileID: 0}
+  grapple: {fileID: 0}
 --- !u!114 &2671781830179808370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06333a3357399847b118b435332655b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   Pistol: {fileID: 2671781829247225990}
   flRot: {fileID: 2671781829247225985}
   flSpeed: 20
@@ -283,11 +290,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7819f4c81b2fa12408a6e27ef7e2cd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   bullet: {fileID: 8934619358105217197, guid: 766f76faf92bdc34d9c0e0e93ba77667, type: 3}
   shootPos: {fileID: 2671781829516116616}
-  speed: 500
+  speed: 1200
   kb: 0.2
   color: {r: 1, g: 1, b: 1, a: 1}
+  ammo: 3
+  ammocd: 0
+  ammocdroof: 3
+  ammocdcd: 0
 --- !u!58 &2671781830179808366
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -325,6 +338,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3535246953467872005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2671781830179808371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 368b19668df59eb448a6200b0c493385
+  hasSpawned: 0
 --- !u!1 &2671781830348357242
 GameObject:
   m_ObjectHideFlags: 0

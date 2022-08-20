@@ -222,6 +222,10 @@ MonoBehaviour:
   jumpcd: 1
   _lindeRenderer: {fileID: 963911893217495980}
   _distancejoint: {fileID: 352450382690316089}
+  grapple: {fileID: 2884430472495326428, guid: e57b9501032cd57458e16d7b72faf8c9, type: 3}
+  shootPos: {fileID: 6982631490053476922}
+  grapSpeed: 1000
+  grapOn: 0
 --- !u!114 &6982631489389933760
 MonoBehaviour:
   m_ObjectHideFlags: 0

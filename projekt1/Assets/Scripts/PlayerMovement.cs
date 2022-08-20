@@ -18,9 +18,18 @@ public class PlayerMovement : NetworkBehaviour
     [Header("Grapple")]
     public LineRenderer _lindeRenderer;
     public DistanceJoint2D _distancejoint;
+    public GameObject grapple;
+    public Transform shootPos;
+    public float grapSpeed;
+    GameObject grap;
+
+
+    [SyncVar]
+    public bool grapOn;
 
     private void Start()
     {
+        grapOn = false;
         if (!isLocalPlayer)
         {
             return;
@@ -30,13 +39,16 @@ public class PlayerMovement : NetworkBehaviour
     }
     void Update()
     {
+        OnLineRenderer(grapOn);
+
         if (!isLocalPlayer) return;
 
         
         Instance = this;
-        Grapple();
+        NewGrapple();
         Movement();
     }
+
     void FixedUpdate()
     {
         rb.AddForce(input * Time.fixedDeltaTime);
@@ -85,6 +97,67 @@ public class PlayerMovement : NetworkBehaviour
             _lindeRenderer.SetPosition(1, transform.position);
         }
     }
+
+    public void OnLineRenderer(bool on)
+    {
+        if (grap)
+        {
+            _lindeRenderer.SetPosition(0, grap.transform.position);
+            _lindeRenderer.SetPosition(1, transform.position);
+            _distancejoint.connectedAnchor = grap.transform.position;
+            _lindeRenderer.enabled = true;
+            if (grap.GetComponent<Rigidbody2D>().isKinematic)
+            {
+                _distancejoint.enabled = true;
+            }
+        }
+    }
+
+    void NewGrapple()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (grap)
+            {
+                grapOn = false;
+                Destroy(grap);
+                grap = null;
+                _distancejoint.enabled = false;
+                _lindeRenderer.enabled = false;
+            }
+            else
+            {
+                grap = Instantiate(grapple, shootPos.position, transform.rotation);
+                Physics2D.IgnoreCollision(grap.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
+                grap.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
+                grap.GetComponent<Rigidbody2D>().AddForce(shootPos.right * grapSpeed);
+                NetworkServer.Spawn(grap);
+                grapOn = true;
+
+            }
+        }
+        
+
+
+    }
+
+    [Command(requiresAuthority = false)]
+    void GrapOnServer()
+    {
+        GrapOnClient();
+    }
+
+    [ClientRpc]
+    void GrapOnClient()
+    {
+        
+    }
+
+
+
+
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
