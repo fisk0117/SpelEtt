@@ -117,29 +117,8 @@ public class PlayerMovement : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if (grap)
-            {
-                grapOn = false;
-                Destroy(grap);
-                grap = null;
-                _distancejoint.enabled = false;
-                _lindeRenderer.enabled = false;
-            }
-            else
-            {
-                grap = Instantiate(grapple, shootPos.position, transform.rotation);
-                Physics2D.IgnoreCollision(grap.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-
-                grap.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
-                grap.GetComponent<Rigidbody2D>().AddForce(shootPos.right * grapSpeed);
-                NetworkServer.Spawn(grap);
-                grapOn = true;
-
-            }
+            GrapOnServer();
         }
-        
-
-
     }
 
     [Command(requiresAuthority = false)]
@@ -151,7 +130,24 @@ public class PlayerMovement : NetworkBehaviour
     [ClientRpc]
     void GrapOnClient()
     {
-        
+        if (grap)
+        {
+            grapOn = false;
+            Destroy(grap);
+            grap = null;
+            _distancejoint.enabled = false;
+            _lindeRenderer.enabled = false;
+        }
+        else
+        {
+            grap = Instantiate(grapple, shootPos.position, transform.rotation);
+            Physics2D.IgnoreCollision(grap.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
+            grap.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
+            grap.GetComponent<Rigidbody2D>().AddForce(shootPos.right * grapSpeed);
+            grapOn = true;
+
+        }
     }
 
 
