@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
-public class size : NetworkBehaviour
+public class size : MonoBehaviour
 {
     float a;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class size : NetworkBehaviour
     void Update()
     {
         
-        a = GameObject.FindWithTag("Player").GetComponent<Shooter>().ammocd;
+        a = player.GetComponent<Shooter>().ammocd;
         //Debug.Log(a);
 
         gameObject.active = true;
