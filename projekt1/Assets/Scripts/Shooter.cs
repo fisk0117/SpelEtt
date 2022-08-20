@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+
 public class Shooter : NetworkBehaviour
 {
     public GameObject bullet;
@@ -22,13 +23,12 @@ public class Shooter : NetworkBehaviour
 
     void Update()
     {
-        if (!isLocalPlayer)
-            return;
+        
         tr.startColor = color;
         tr.endColor = color;
         
 
-        if (Input.GetMouseButtonDown(0) && (ammo >= 1) && (ammocd <= 0))
+        if (Input.GetMouseButtonDown(0) && (ammo >= 1) && (ammocd <= 0) && this.isLocalPlayer)
         {
             Shoot();
             ammo--;
@@ -44,7 +44,7 @@ public class Shooter : NetworkBehaviour
         if (ammocd >=0)
         {
             ammocd -= Time.deltaTime;
-            //Debug.Log(ammocd);
+            
         }
 
         if ((ammocd <= 0) && (ammocdcd == 1))
@@ -63,6 +63,7 @@ public class Shooter : NetworkBehaviour
 
         lazerBullet.GetComponent<Rigidbody2D>().AddForce(shootPos.right * speed);
         gameObject.GetComponent<Rigidbody2D>().AddForce(shootPos.right * -speed * kb);
+        NetworkServer.Spawn(lazerBullet);
     }
 
     
