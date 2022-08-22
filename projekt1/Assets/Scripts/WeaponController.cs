@@ -11,7 +11,6 @@ public class WeaponController : NetworkBehaviour
     public Transform flRot;
 
     public float flSpeed = 5f;
-    float angleOffset;
     float angle;
 
     Vector3 screenPosition;
@@ -50,8 +49,7 @@ public class WeaponController : NetworkBehaviour
 
         mousePos = mousePosition - transform.position;
 
-        angle = Vector2.SignedAngle(mousePos, Vector2.right) + angleOffset;
-
-        flRot.eulerAngles = new Vector3(0f, 0f, Mathf.LerpAngle(flRot.eulerAngles.z, -angle, Time.deltaTime * flSpeed));
+        angle = Vector2.SignedAngle(mousePos, Vector2.right);
+        flRot.eulerAngles = new Vector3(0f, 0f, -angle);
     }
 }
