@@ -77,5 +77,4 @@ public class Shooter : NetworkBehaviour
         lazerBullet.GetComponent<Rigidbody2D>().AddForce(shootPos.right * speed);
         gameObject.GetComponent<Rigidbody2D>().AddForce(shootPos.right * -speed * kb);
     }
-
 }
