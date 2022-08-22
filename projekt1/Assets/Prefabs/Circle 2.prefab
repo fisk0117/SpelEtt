@@ -242,7 +242,7 @@ MonoBehaviour:
   syncInterval: 0.1
   Pistol: {fileID: 6982631489785626676}
   flRot: {fileID: 6982631489785626675}
-  flSpeed: 20
+  flSpeed: 1000
 --- !u!114 &6982631489389933787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.1
+  syncInterval: 0.001
   clientAuthority: 1
   sendInterval: 0.05
   syncPosition: 1
@@ -613,7 +613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6982631490053476923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.609, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
