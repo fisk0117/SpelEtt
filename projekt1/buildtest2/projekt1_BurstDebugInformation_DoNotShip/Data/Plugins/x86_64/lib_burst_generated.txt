@@ -175,8 +175,10 @@ Library: lib_burst_generated
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Mirror.Components.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.2D.Animation.Runtime.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
+--root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\com.rlabrecque.steamworks.net.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Services.Core.dll
+--root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\FizzySteamworks.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Telepathy.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
@@ -197,8 +199,6 @@ Library: lib_burst_generated
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Mirror.Authenticators.dll
---root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\com.rlabrecque.steamworks.net.dll
---root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\FizzySteamworks.dll
 --assembly-folder=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -381,8 +381,10 @@ Library: lib_burst_generated
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Mirror.Components.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.2D.Animation.Runtime.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
+--root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\com.rlabrecque.steamworks.net.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Services.Core.dll
+--root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\FizzySteamworks.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Telepathy.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
@@ -403,8 +405,6 @@ Library: lib_burst_generated
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
 --root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\Mirror.Authenticators.dll
---root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\com.rlabrecque.steamworks.net.dll
---root-assembly=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\FizzySteamworks.dll
 --assembly-folder=E:\SpelEtt\projekt1\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
