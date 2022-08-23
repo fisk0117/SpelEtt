@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class damage : MonoBehaviour
 {
+    public float countdown = 1;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,15 +17,9 @@ public class damage : MonoBehaviour
     {
     
     }
-    // void OnCollisionEnter2D(Collision2D other)
-    // {
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Destroy(this.gameObject, countdown);
         
-    //     if (other.gameObject.tag == "Player")
-    //     {
-    //         other.gameObject.GetComponent<health>().hp -=1;
-            
-    //         Destroy(this.gameObject);
-            
-    //     }
-    // }
+    }
 }

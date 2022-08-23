@@ -21,12 +21,13 @@ public class Shooter : NetworkBehaviour
 
     public float flSpeed = 5f;
     float angle;
-
+    public float countdowndestroy = 2;
     Vector3 screenPosition;
     Vector3 mousePosition;
     void Start()
     {
         tr = bullet.GetComponent<TrailRenderer>();
+
 
     }
 
@@ -89,13 +90,13 @@ public class Shooter : NetworkBehaviour
 
 
 
-        GameObject lazerBullet = Instantiate(bullet, shootPos.position, Quaternion.Euler(_rot));
+        GameObject lazerBullet = Instantiate(bullet, _myPos, Quaternion.Euler(_rot));
         Physics2D.IgnoreCollision(lazerBullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
         //lazerBullet.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         lazerBullet.GetComponent<Rigidbody2D>().velocity = (_direction * speed);
         gameObject.GetComponent<Rigidbody2D>().AddForce(_direction * -speed * kb);
-
+        //Destroy(lazerBullet, countdowndestroy);
         //NetworkServer.Spawn(lazerBullet);
 
 

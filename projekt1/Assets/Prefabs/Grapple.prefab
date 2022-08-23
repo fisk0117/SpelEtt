@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5738382985991238256}
   - component: {fileID: 4414960545070962633}
-  - component: {fileID: 3714743858729941864}
   - component: {fileID: 1477737877002881078}
   - component: {fileID: 5352069781039864586}
   - component: {fileID: 4427552864316277627}
   - component: {fileID: 3934448468573121669}
   - component: {fileID: 4976307583386076858}
+  - component: {fileID: 8857723520866278479}
   m_Layer: 0
   m_Name: Grapple
   m_TagString: Untagged
@@ -59,22 +59,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &3714743858729941864
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2884430472495326428}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &1477737877002881078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,3 +196,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &8857723520866278479
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884430472495326428}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.4487915, y: 0.048202515}
+  - {x: 0.093444824, y: 0.21612549}
+  - {x: 0.31497192, y: 0.21391296}
+  - {x: 0.4083252, y: 0.10845947}
+  - {x: 0.42492676, y: -0.051757812}
+  - {x: 0.3159485, y: -0.15975952}
+  - {x: 0.074279785, y: -0.14607239}
+  - {x: -0.45324707, y: -0.011489868}
+  - {x: -0.44604492, y: 0.048217773}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

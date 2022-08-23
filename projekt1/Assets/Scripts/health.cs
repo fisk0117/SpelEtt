@@ -20,7 +20,10 @@ public class health : MonoBehaviour
     void Update()
     {
         
-
+        if (hp <= 0)
+        {
+            death = true;
+        }
         if (death)
         {
                livingplayer.transform.position = new Vector3(0, 0, 0);
@@ -29,17 +32,10 @@ public class health : MonoBehaviour
                deaths ++;
         }
 
-        Death();
+       
     }
 
-    void Death()
-    {
-    if (hp <= 0)
-        {
-            death = true;
-        }
-    }
-
+  
     void OnCollisionEnter2D(Collision2D other)
     {
         
