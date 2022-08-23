@@ -39,7 +39,7 @@ public class PlayerMovement : NetworkBehaviour
             hp.active = false;
             return;
         }
-        
+
 
         _distancejoint.enabled = false;
 
@@ -68,15 +68,18 @@ public class PlayerMovement : NetworkBehaviour
         // Vector2 _direction = (_target - _myPos).normalized;
         float posX = Screen.width / 2;
         float posY = Screen.height / 2;
+        Vector3 wantedPos = Camera.main.WorldToScreenPoint(transform.position);
         // Vector3 pos = shootPos.position.normalized;
         GUI.contentColor = Color.black;
-        for (float i = ammo; i > 0; i--){
-            GUI.DrawTexture(new Rect(posX - 15 + i*7 , posY - 30, 5, 5), ammotexture, ScaleMode.ScaleToFit, true,0f);
+        for (float i = ammo; i > 0; i--)
+        {
+            GUI.DrawTexture(new Rect(wantedPos.x - 15 + i * 7, Screen.height - wantedPos.y - 30, 5, 5), ammotexture, ScaleMode.ScaleToFit, true, 0f);
         }
         //GUI.Label(new Rect(posX, posY - 30, 100, 20), ammo.ToString());
         GUI.contentColor = Color.red;
-        GUI.Label(new Rect(posX, posY - 45, 100, 20), life.ToString());
-        
+        GUI.Label(new Rect(wantedPos.x, Screen.height - wantedPos.y - 45, 100, 20), life.ToString());
+
+        Debug.Log(wantedPos.x + " " + wantedPos.y);
     }
 
     void FixedUpdate()
@@ -92,7 +95,7 @@ public class PlayerMovement : NetworkBehaviour
         if (Input.GetKeyDown("space") && (jumpcd == 1))
         {
             jumpcd = 0;
-            
+
             rb.AddForce(gameObject.transform.up * jumpForce);
         }
     }
