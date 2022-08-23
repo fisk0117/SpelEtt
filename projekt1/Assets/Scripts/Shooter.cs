@@ -15,18 +15,27 @@ public class Shooter : NetworkBehaviour
     public float ammocd = 0f;
     public float ammocdroof = 3f;
     public float ammocdcd = 0f;
+
+    Vector3 mousePos;
+    public Transform flRot;
+
+    public float flSpeed = 5f;
+    float angle;
+
+    Vector3 screenPosition;
+    Vector3 mousePosition;
     void Start()
     {
         tr = bullet.GetComponent<TrailRenderer>();
-        
+
     }
 
     void Update()
     {
-        
+
         tr.startColor = color;
         tr.endColor = color;
-        
+
 
         if (Input.GetMouseButtonDown(0) && (ammo >= 1) && (ammocd <= 0) && this.isLocalPlayer)
         {
@@ -34,17 +43,18 @@ public class Shooter : NetworkBehaviour
             ammo--;
             Debug.Log(ammo);
         }
-        
-        else if ((ammo <= 0) && (ammocdcd == 0)){
+
+        else if ((ammo <= 0) && (ammocdcd == 0))
+        {
             ammocd = ammocdroof;
             ammocdcd = 1;
 
         }
 
-        if (ammocd >=0)
+        if (ammocd >= 0)
         {
             ammocd -= Time.deltaTime;
-            
+
         }
 
         if ((ammocd <= 0) && (ammocdcd == 1))
@@ -54,27 +64,43 @@ public class Shooter : NetworkBehaviour
         }
 
 
-        
+
     }
     void Shoot()
     {
-        ShootOnServer();
+        Vector2 _target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+        Vector2 _myPos = shootPos.position;
+        Vector2 _direction = (_target - _myPos).normalized;
+        Vector3 _rot = transform.rotation.eulerAngles;
+
+        ShootOnServer(_myPos, _direction, _rot);
     }
 
     [Command(requiresAuthority = false)]
-    void ShootOnServer()
+    void ShootOnServer(Vector2 _myPos, Vector2 _direction, Vector3 _rot)
     {
-        ShootOnClient();
+        ShootOnClient(_myPos, _direction, _rot);
     }
 
     [ClientRpc]
-    void ShootOnClient()
+    void ShootOnClient(Vector2 _myPos, Vector2 _direction, Vector3 _rot)
     {
-        GameObject lazerBullet = Instantiate(bullet, shootPos.position, transform.rotation);
+
+
+
+
+        GameObject lazerBullet = Instantiate(bullet, shootPos.position, Quaternion.Euler(_rot));
         Physics2D.IgnoreCollision(lazerBullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
-        lazerBullet.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
-        lazerBullet.GetComponent<Rigidbody2D>().AddForce(shootPos.right * speed);
-        gameObject.GetComponent<Rigidbody2D>().AddForce(shootPos.right * -speed * kb);
+        //lazerBullet.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
+        lazerBullet.GetComponent<Rigidbody2D>().velocity = (_direction * speed);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(_direction * -speed * kb);
+
+        //NetworkServer.Spawn(lazerBullet);
+
+
+
+
+
     }
 }

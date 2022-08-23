@@ -6,7 +6,9 @@ public class health : MonoBehaviour
 {
     public float hp;
     public float starthp = 3;
-    bool death = false;
+    public bool death = false;
+
+    public float deaths =0;
     public GameObject livingplayer;
     // Start is called before the first frame update
     void Start()
@@ -17,19 +19,26 @@ public class health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp <= 0)
-        {
-            death = true;
-        }
+        
 
         if (death)
         {
                livingplayer.transform.position = new Vector3(0, 0, 0);
                hp = starthp;  
                death = false;
+               deaths ++;
         }
+
+        Death();
     }
 
+    void Death()
+    {
+    if (hp <= 0)
+        {
+            death = true;
+        }
+    }
     // void OnCollisionEnter2D(Collision2D other)
     // {
     //     if (other.gameObject.tag == "bullet")

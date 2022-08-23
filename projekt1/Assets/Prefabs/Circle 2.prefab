@@ -216,16 +216,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  livingplayer: {fileID: 6982631489389933761}
+  hp: {fileID: 5040470485566712431}
   rb: {fileID: 6982631489389933789}
   speed: 1000
   jumpForce: 500
   maxVelocity: 0
   jumpcd: 1
+  ammotexture: {fileID: 2800000, guid: f1e0fc62674dd174c8708538f605bbc4, type: 3}
   _lindeRenderer: {fileID: 963911893217495980}
   _distancejoint: {fileID: 352450382690316089}
   grapple: {fileID: 2884430472495326428, guid: e57b9501032cd57458e16d7b72faf8c9, type: 3}
   shootPos: {fileID: 6982631490053476922}
-  grapSpeed: 1000
+  grapSpeed: 50
   grapOn: 0
 --- !u!114 &6982631489389933760
 MonoBehaviour:
@@ -260,13 +263,15 @@ MonoBehaviour:
   syncInterval: 0.1
   bullet: {fileID: 8934619358105217197, guid: 766f76faf92bdc34d9c0e0e93ba77667, type: 3}
   shootPos: {fileID: 6982631490053476922}
-  speed: 500
+  speed: 50
   kb: 0.2
   color: {r: 1, g: 1, b: 1, a: 1}
   ammo: 3
   ammocd: 0
   ammocdroof: 3
   ammocdcd: 0
+  flRot: {fileID: 0}
+  flSpeed: 5
 --- !u!58 &6982631489389933788
 CircleCollider2D:
   m_ObjectHideFlags: 0

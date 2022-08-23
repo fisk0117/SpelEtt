@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public GameObject[] players;
     
+
 
     void Start()
     {
+        if (players == null)
+            players = GameObject.FindGameObjectsWithTag("Player");
+
         //Camera.main = gameObject.GetComponent<Camera>();
     }
     // Update is called once per frame
     void Update()
     {
+        //foreach (GameObject Player in players)
         FindPlayer();
     }
     void FindPlayer()
