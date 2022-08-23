@@ -39,6 +39,19 @@ public class health : MonoBehaviour
             death = true;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        
+        if (other.gameObject.tag == "bullet")
+        {
+            Destroy(other.gameObject);
+            hp -=1;
+            
+            
+            
+        }
+    }
     // void OnCollisionEnter2D(Collision2D other)
     // {
     //     if (other.gameObject.tag == "bullet")

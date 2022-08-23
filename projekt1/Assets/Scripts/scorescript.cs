@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class scorescript : MonoBehaviour
+public class scorescript : NetworkBehaviour
 {
     public GameObject[] players;
     public float[] score;
@@ -42,14 +43,12 @@ public class scorescript : MonoBehaviour
         float posY = Screen.height / 2;
 
 
-        
+
         GUI.contentColor = Color.yellow;
         GUI.Label(new Rect(posX - 100, 0, 200, 20), score[1].ToString());
         GUI.contentColor = Color.yellow;
         GUI.Label(new Rect(posX + 100, 0, 200, 20), score[2].ToString());
 
-        Debug.Log(score[1]);
-        Debug.Log(score[2]);
 
     }
 }

@@ -15,14 +15,15 @@ public class damage : MonoBehaviour
     {
     
     }
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<health>().hp -=1;
+    // void OnCollisionEnter2D(Collision2D other)
+    // {
+        
+    //     if (other.gameObject.tag == "Player")
+    //     {
+    //         other.gameObject.GetComponent<health>().hp -=1;
             
-            Destroy(this.gameObject);
+    //         Destroy(this.gameObject);
             
-        }
-    }
+    //     }
+    // }
 }

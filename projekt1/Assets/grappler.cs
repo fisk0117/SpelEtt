@@ -10,4 +10,16 @@ public class grappler : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 
     }
+    void Update()
+    {
+        Vector3 worldDirectionToPointForward = gameObject.GetComponent<Rigidbody2D>().velocity.normalized;
+        Vector3 localDirectionToPointForward = Vector3.right;
+
+        Vector3 currentWorldForwardDirection = transform.TransformDirection(
+                localDirectionToPointForward);
+        float angleDiff = Vector3.SignedAngle(currentWorldForwardDirection,
+                worldDirectionToPointForward, Vector3.forward);
+
+        transform.Rotate(Vector3.forward, angleDiff, Space.World);
+    }
 }

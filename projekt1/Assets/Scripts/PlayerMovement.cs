@@ -71,12 +71,12 @@ public class PlayerMovement : NetworkBehaviour
         // Vector3 pos = shootPos.position.normalized;
         GUI.contentColor = Color.black;
         for (float i = ammo; i > 0; i--){
-            GUI.DrawTexture(new Rect(posX - 15 + i*7 , posY - 20, 5, 5), ammotexture, ScaleMode.ScaleToFit, true,0f);
+            GUI.DrawTexture(new Rect(posX - 15 + i*7 , posY - 30, 5, 5), ammotexture, ScaleMode.ScaleToFit, true,0f);
         }
         //GUI.Label(new Rect(posX, posY - 30, 100, 20), ammo.ToString());
         GUI.contentColor = Color.red;
-        GUI.Label(new Rect(posX, posY - 30, 100, 20), life.ToString());
-        Debug.Log(shootPos.position.x);
+        GUI.Label(new Rect(posX, posY - 45, 100, 20), life.ToString());
+        
     }
 
     void FixedUpdate()
@@ -92,7 +92,7 @@ public class PlayerMovement : NetworkBehaviour
         if (Input.GetKeyDown("space") && (jumpcd == 1))
         {
             jumpcd = 0;
-            Debug.Log("yuh");
+            
             rb.AddForce(gameObject.transform.up * jumpForce);
         }
     }
