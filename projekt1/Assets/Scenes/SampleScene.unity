@@ -1858,6 +1858,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7916775182019608004, guid: c35fd6cadea666f42b6e6a3e9770b55f, type: 3}
+      propertyPath: playerSpawnMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916775182019608004, guid: c35fd6cadea666f42b6e6a3e9770b55f, type: 3}
       propertyPath: spawnPrefabs.Array.size
       value: 2
       objectReference: {fileID: 0}

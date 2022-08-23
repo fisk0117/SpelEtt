@@ -8,6 +8,9 @@ public class scorescript : NetworkBehaviour
     public GameObject[] players;
     public float[] score;
 
+    public Sprite spelare1;
+    public Sprite spelare2;
+
 
 
     int i;
@@ -31,6 +34,16 @@ public class scorescript : NetworkBehaviour
         foreach (GameObject player in players)
         {
             score[i] = player.GetComponent<health>().deaths;
+            if (i == 1){
+                SpriteRenderer renderer = player.GetComponent<SpriteRenderer>();
+
+                renderer.sprite = spelare1;
+            }
+            if (i == 2){
+                SpriteRenderer renderer = player.GetComponent<SpriteRenderer>();
+
+                renderer.sprite = spelare2;
+            }
             i++;
         }
     }
