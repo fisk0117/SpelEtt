@@ -11,7 +11,8 @@ public class Shooter : NetworkBehaviour
     public float kb = 0.4f;
     public Color color;
     TrailRenderer tr;
-    public float ammo = 3f;
+    public float ammo;
+    public float ammoroof = 3f;
     public float ammocd = 0f;
     public float ammocdroof = 3f;
     public float ammocdcd = 0f;
@@ -27,6 +28,8 @@ public class Shooter : NetworkBehaviour
     void Start()
     {
         tr = bullet.GetComponent<TrailRenderer>();
+
+        ammo = ammoroof;
 
 
     }
@@ -60,7 +63,7 @@ public class Shooter : NetworkBehaviour
 
         if ((ammocd <= 0) && (ammocdcd == 1))
         {
-            ammo = 3f;
+            ammo = ammoroof;
             ammocdcd = 0;
         }
 

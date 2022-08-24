@@ -55,7 +55,7 @@ public class scorescript : NetworkBehaviour
             i++;
         }
 
-        if (score[1] >= 5)
+        if (score[1] >= 2)
         {
             vinst = 1;
             rounds[1] += 1;
@@ -65,17 +65,23 @@ public class scorescript : NetworkBehaviour
                 player.GetComponent<health>().deaths = 0;
 
             }
+            players[0].GetComponent<PlayerMovement>().cash = 1;
+
+
+
         }
-        if (score[2] >= 5)
+        if (score[2] >= 2)
         {
             vinst = 2;
             rounds[2] += 1;
             Invoke("vinst0", 3f);
+
             foreach (GameObject player in players)
             {
                 player.GetComponent<health>().deaths = 0;
 
             }
+            players[1].GetComponent<PlayerMovement>().cash = 1;
         }
 
 
@@ -111,11 +117,11 @@ public class scorescript : NetworkBehaviour
 
         if (vinst == 1)
         {
-            GUI.Label(new Rect(posX - 100, posY - 10, 200, 20), "Player 2 wins", style);
+            GUI.Label(new Rect(posX - 100, posY - 10, 200, 20), "Player 2 wins round", style);
         }
         if (vinst == 2)
         {
-            GUI.Label(new Rect(posX - 100, posY - 10, 200, 20), "Player 1 wins", style);
+            GUI.Label(new Rect(posX - 100, posY - 10, 200, 20), "Player 1 wins round", style);
         }
 
 

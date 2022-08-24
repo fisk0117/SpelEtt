@@ -17,6 +17,7 @@ public class PlayerMovement : NetworkBehaviour
     public int jumpcd = 1;
     public Texture ammotexture;
     float ammo;
+    float ammoroof;
     float life;
 
     [Header("Grapple")]
@@ -27,6 +28,7 @@ public class PlayerMovement : NetworkBehaviour
     public float grapSpeed;
     GameObject grap;
 
+    public float cash;
 
     [SyncVar]
     public bool grapOn;
@@ -52,12 +54,13 @@ public class PlayerMovement : NetworkBehaviour
 
 
         ammo = livingplayer.GetComponent<Shooter>().ammo;
+        ammoroof = livingplayer.GetComponent<Shooter>().ammoroof;
         life = livingplayer.GetComponent<health>().hp;
 
         Instance = this;
         NewGrapple();
         Movement();
-
+        LevelUp();
     }
 
     void OnGUI()
@@ -97,6 +100,15 @@ public class PlayerMovement : NetworkBehaviour
             jumpcd = 0;
 
             rb.AddForce(gameObject.transform.up * jumpForce);
+        }
+    }
+
+    void LevelUp()
+    {
+        if (cash == 1)
+        {
+            cash = 0;
+            this.GetComponent<Shooter>().ammoroof += 1;
         }
     }
     void Grapple()
