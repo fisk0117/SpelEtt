@@ -59,7 +59,7 @@ public class scorescript : NetworkBehaviour
         {
             vinst = 1;
             rounds[1] += 1;
-
+            Invoke("vinst0", 3f);
             foreach (GameObject player in players)
             {
                 player.GetComponent<health>().deaths = 0;
@@ -70,7 +70,7 @@ public class scorescript : NetworkBehaviour
         {
             vinst = 2;
             rounds[2] += 1;
-
+            Invoke("vinst0", 3f);
             foreach (GameObject player in players)
             {
                 player.GetComponent<health>().deaths = 0;
@@ -79,6 +79,11 @@ public class scorescript : NetworkBehaviour
         }
 
 
+    }
+
+    void vinst0()
+    {
+        vinst = 0;
     }
 
     void OnGUI()
@@ -96,13 +101,13 @@ public class scorescript : NetworkBehaviour
 
 
         GUI.contentColor = Color.yellow;
-        GUI.Label(new Rect(posX - 100 - 100, 0, 200, 20), score[1].ToString());
+        GUI.Label(new Rect(posX - 120, 0, 200, 20), score[1].ToString());
 
-        GUI.Label(new Rect(posX + 100 - 100, 0, 200, 20), score[2].ToString());
+        GUI.Label(new Rect(posX + 80, 0, 200, 20), score[2].ToString());
 
-        GUI.Label(new Rect(posX - 130 - 100, 0, 200, 20), rounds[1].ToString(), style2);
+        GUI.Label(new Rect(posX - 100, 0, 200, 20), rounds[1].ToString(), style2);
 
-        GUI.Label(new Rect(posX + 130 - 100, 0, 200, 20), rounds[2].ToString(), style2);
+        GUI.Label(new Rect(posX + 100, 0, 200, 20), rounds[2].ToString(), style2);
 
         if (vinst == 1)
         {
