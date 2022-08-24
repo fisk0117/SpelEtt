@@ -97,11 +97,11 @@ public class scorescript : NetworkBehaviour
 
         GUI.contentColor = Color.yellow;
         GUI.Label(new Rect(posX - 100 - 100, 0, 200, 20), score[1].ToString());
-        GUI.contentColor = Color.yellow;
+
         GUI.Label(new Rect(posX + 100 - 100, 0, 200, 20), score[2].ToString());
-        style2.contentColor = Color.yellow;
+
         GUI.Label(new Rect(posX - 130 - 100, 0, 200, 20), rounds[1].ToString(), style2);
-        
+
         GUI.Label(new Rect(posX + 130 - 100, 0, 200, 20), rounds[2].ToString(), style2);
 
         if (vinst == 1)
