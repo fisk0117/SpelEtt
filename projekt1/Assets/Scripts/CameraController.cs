@@ -42,7 +42,7 @@ public class CameraController : MonoBehaviour
         {
             if (dist > 20)
             {
-                Camera.main.orthographicSize = 20 + (dist-20)/2;
+                Camera.main.orthographicSize = 20 + (dist-20);
             }
 
         }
