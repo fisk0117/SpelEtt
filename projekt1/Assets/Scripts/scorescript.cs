@@ -6,8 +6,14 @@ using Mirror;
 public class scorescript : NetworkBehaviour
 {
     public GameObject[] players;
-    public float[] score;
-    public float[] rounds;
+    [SyncVar]
+    public float score1;
+    [SyncVar]
+    public float score2;
+    [SyncVar]
+    public float rounds1;
+    [SyncVar]
+    public float rounds2;
 
     public Sprite spelare1;
     public Sprite spelare2;
@@ -21,12 +27,12 @@ public class scorescript : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = new float[10];
-        score[1] = 0;
-        score[2] = 0;
-        rounds = new float[3];
-        rounds[1] = 0;
-        rounds[2] = 0;
+
+        score1 = 0;
+        score2 = 0;
+
+        rounds1 = 0;
+        rounds2 = 0;
     }
 
     // Update is called once per frame
@@ -55,10 +61,10 @@ public class scorescript : NetworkBehaviour
             i++;
         }
 
-        if (score[1] >= 2)
+        if (score1 >= 2)
         {
             vinst = 1;
-            rounds[1] += 1;
+            rounds1 += 1;
             Invoke("vinst0", 3f);
             foreach (GameObject player in players)
             {
@@ -70,10 +76,10 @@ public class scorescript : NetworkBehaviour
 
 
         }
-        if (score[2] >= 2)
+        if (score2 >= 2)
         {
             vinst = 2;
-            rounds[2] += 1;
+            rounds2 += 1;
             Invoke("vinst0", 3f);
 
             foreach (GameObject player in players)
@@ -107,13 +113,13 @@ public class scorescript : NetworkBehaviour
 
 
         GUI.contentColor = Color.yellow;
-        GUI.Label(new Rect(posX - 120, 0, 200, 20), score[1].ToString());
+        GUI.Label(new Rect(posX - 120, 0, 200, 20), score1.ToString());
 
-        GUI.Label(new Rect(posX + 80, 0, 200, 20), score[2].ToString());
+        GUI.Label(new Rect(posX + 80, 0, 200, 20), score2.ToString());
 
-        GUI.Label(new Rect(posX - 100, 0, 200, 20), rounds[1].ToString(), style2);
+        GUI.Label(new Rect(posX - 100, 0, 200, 20), rounds1.ToString(), style2);
 
-        GUI.Label(new Rect(posX + 100, 0, 200, 20), rounds[2].ToString(), style2);
+        GUI.Label(new Rect(posX + 100, 0, 200, 20), rounds2.ToString(), style2);
 
         if (vinst == 1)
         {
