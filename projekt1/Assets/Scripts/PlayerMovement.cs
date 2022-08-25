@@ -16,8 +16,10 @@ public class PlayerMovement : NetworkBehaviour
     public float maxVelocity;
     public int jumpcd = 1;
     public Texture ammotexture;
+    [SyncVar]
     float ammo;
     float ammoroof;
+    [SyncVar]
     float life;
 
     [Header("Grapple")]
