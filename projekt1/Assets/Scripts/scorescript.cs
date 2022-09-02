@@ -45,7 +45,14 @@ public class scorescript : NetworkBehaviour
 
         foreach (GameObject player in players)
         {
-            score[i] = player.GetComponent<health>().deaths;
+            if (i == 1)
+            {
+                score1 = player.GetComponent<health>().deaths;
+            }
+            else if (i == 2){
+                score2 = player.GetComponent<health>().deaths;
+            }
+
             if (i == 1)
             {
                 SpriteRenderer renderer = player.GetComponent<SpriteRenderer>();
@@ -68,7 +75,7 @@ public class scorescript : NetworkBehaviour
             Invoke("vinst0", 3f);
             foreach (GameObject player in players)
             {
-                player.GetComponent<health>().deaths = 0;
+                player.GetComponent<healtding with h>().deaths = 0;
 
             }
             players[0].GetComponent<PlayerMovement>().cash = 1;

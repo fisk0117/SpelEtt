@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class health : MonoBehaviour
 {
-    [SyncVar]
+    
     public float hp;
     public float starthp = 3;
     public bool death = false;
